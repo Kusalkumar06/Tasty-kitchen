@@ -1,0 +1,89 @@
+import React from 'react'
+import Header from './Header'
+import Cookies from 'js-cookie'
+import { useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
+import Carousel from './Carousel'
+import Restaurants from './Restaurants';
+import Footer from './Footer';
+import { useSelector,useDispatch } from 'react-redux';
+import slice from '../redux/slices';
+
+const actions = slice.actions
+
+function Home() {
+   const dispatch = useDispatch()
+
+  const { carouselList, restaurantList,pageNum } = useSelector((store) => {
+    return store.sliceState;
+  });
+
+  const setCarouselList = (data) => {
+    dispatch(actions.setCarouselList(data));
+  } 
+
+  const setRestaurantList = (data) => {
+    dispatch(actions.setRestaurantList(data));
+  };
+
+  const token = Cookies.get("jwt_token");
+  const offset = (pageNum - 1) * 9;
+
+  const fetchCarouselImages = () => {
+    const fn = async () => {
+      const url = "https://apis.ccbp.in/restaurants-list/offers";
+      const options = {
+        method: "GET",
+        headers:{
+          Authorization : `Bearer ${token}`
+        }
+      }
+      const response = await fetch(url, options);
+      const carouselImages = await response.json();
+      setCarouselList(carouselImages.offers);
+    };
+    fn();
+  }
+
+  const fetchRestaurants = () => {
+    const fn = async () => {
+      console.log(pageNum)
+      const url = `https://apis.ccbp.in/restaurants-list?offset=${offset}&limit=${9}`;
+      const options = {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+      const response = await fetch(url, options);
+      const restaurants = await response.json();
+      setRestaurantList(restaurants.restaurants);
+    };
+    fn();
+  };
+
+  useEffect(fetchCarouselImages,[]);
+
+  useEffect(fetchRestaurants,[pageNum])
+
+    if (token === undefined) {
+      return <Navigate to="/login"/>;
+    }
+
+  return (
+    <div>
+      <Header />
+      <div className="p-2 md:px-[50px] mt-0 md:mt-[30px]">
+        <div className="mb-[40px] md:mb-[70px]">
+          <Carousel carouselList={carouselList} />
+        </div>
+        <div>
+          <Restaurants restaurantList={restaurantList} />
+        </div>
+      </div>
+      <Footer/>
+    </div>
+  );
+}
+
+export default Home
