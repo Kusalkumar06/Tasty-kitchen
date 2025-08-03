@@ -1,11 +1,98 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import Cookies from 'js-cookie';
+import Header from './Header'
+import { useParams } from 'react-router-dom';
+import { useSelector,useDispatch } from 'react-redux';
+import slice from '../redux/slices';
+import FoodItem from './FoodItem';
+import Footer from './Footer';
+
+const actions = slice.actions
 
 function EachRestaurantItem() {
+  const token = Cookies.get('jwt_token')
+  const {id} = useParams()
+  const dispatch = useDispatch()
+
+  const {restaurantDetails,foodList} = useSelector((store) => {
+    return store.sliceState
+  })
+
+  const setDetails = (data) => {
+    dispatch(actions.setRestaurantDetails(data));
+    dispatch(actions.setFoodList(data.food_items));
+  }
+
+  const fetchEachRestaurantDetails = () => {
+    const fn = async () => {
+      const url = `https://apis.ccbp.in/restaurants-list/${id}`;
+      const options = {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+      const response = await fetch(url,options);
+      const details = await response.json();
+      setDetails(details)
+    };
+    fn();
+  };
+
+  useEffect(fetchEachRestaurantDetails,[id]);
+
   return (
     <div>
-      
+      <Header />
+      <div className="my-3 md:my-[30px] h-[188px] md:h-[387px] mb-[20px] md:py-[50px] md:px-[150px] flex items-center bg-[url('https://res.cloudinary.com/dtrouncfb/image/upload/v1754163443/Rectangle_1399_sqomw9.png')]">
+        <div className="for-desktop-container  hidden md:flex">
+          <div>
+            <img
+              className="for-desktop-view hidden md:block w-[405px] h-[240px] rounded-lg"
+              src={restaurantDetails.image_url}
+            />
+          </div>
+          <div className="Details-container p-[25px] flex flex-col justify-evenly">
+            <h1 className="text-[36px] text-[#FFFFFF] font-[500]">
+              {restaurantDetails.name}
+            </h1>
+            <p className="text-[16px] text-[#FFFFFF] font-[400]">
+              {restaurantDetails.cuisine}
+            </p>
+            <p className="text-[16px] text-[#FFFFFF] font-[400]">
+              {restaurantDetails.location}
+            </p>
+            <div className="flex items-center h-[60px]">
+              <div className="flex flex-col justify-around">
+                <p className="text-[14px]">
+                  ⭐{" "}
+                  <span className="text-[14px] font-[600] text-[#FFFFFF]">
+                    {restaurantDetails.rating}
+                  </span>
+                </p>
+                <p className="text-[12px] text-white">
+                  {restaurantDetails.reviews_count}+ Ratings
+                </p>
+              </div>
+              <div className="w-px h-10 bg-white mx-4"></div>
+              <div className="flex flex-col justify-around">
+                <p className="text-[14px] font-[600] text-[#FFFFFF]">
+                  ₹ {restaurantDetails.cost_for_two}
+                </p>
+                <p className="text-[12px] text-white">Cost for two</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className='md:px-[150px] flex flex-wrap justify-center mb-3'>
+          {foodList.map((food) => (
+            <FoodItem food={food} key={food.id}/>
+          ))}
+      </div>
+      <Footer/>
     </div>
-  )
+  );
 }
 
 export default EachRestaurantItem

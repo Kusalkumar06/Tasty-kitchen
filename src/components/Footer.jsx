@@ -5,7 +5,7 @@ import { faInstagram,faSquarePinterest,faXTwitter,faSquareFacebook } from "@fort
 
 function Footer() {
   return (
-    <div className="w-full h-[200px] md:h-[300px] bg-[#0F172A] flex flex-col items-center justify-center">
+    <div className="w-full h-[200px] md:h-[300px] bg-[#0F172A] flex flex-col items-center justify-center md:mt-[40px]">
       <div className="flex items-center justify-center mb-2">
         <img
           className="w-[36px] h-[29px] md:w-[49px] md:h-[39px] mr-2"

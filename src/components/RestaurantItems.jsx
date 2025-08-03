@@ -9,8 +9,8 @@ function RestaurantItems(props) {
   const {rating,total_reviews} = user_rating;
 
   return (
-    <Link to={`/:${id}`}>
-      <div className="w-full md:w-[30%] mb-[35px] shadow-lg p-[10px] rounded-lg cursor-pointer">
+    <div className="w-full md:w-[30%] mb-[35px] shadow-lg p-[10px] rounded-lg cursor-pointer">
+      <Link to={`/restaurants/${id}`}>
         <div className=" flex">
           <div className="Image-container">
             <img
@@ -45,8 +45,8 @@ function RestaurantItems(props) {
             </div>
           </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 }
 

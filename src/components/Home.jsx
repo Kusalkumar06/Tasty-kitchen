@@ -8,11 +8,13 @@ import Restaurants from './Restaurants';
 import Footer from './Footer';
 import { useSelector,useDispatch } from 'react-redux';
 import slice from '../redux/slices';
+import Cartsync from './Cartsync';
 
 const actions = slice.actions
 
 function Home() {
    const dispatch = useDispatch()
+
 
   const { carouselList, restaurantList,pageNum } = useSelector((store) => {
     return store.sliceState;
@@ -47,7 +49,6 @@ function Home() {
 
   const fetchRestaurants = () => {
     const fn = async () => {
-      console.log(pageNum)
       const url = `https://apis.ccbp.in/restaurants-list?offset=${offset}&limit=${9}`;
       const options = {
         method: "GET",
@@ -65,6 +66,7 @@ function Home() {
   useEffect(fetchCarouselImages,[]);
 
   useEffect(fetchRestaurants,[pageNum])
+  
 
     if (token === undefined) {
       return <Navigate to="/login"/>;
@@ -81,7 +83,7 @@ function Home() {
           <Restaurants restaurantList={restaurantList} />
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
