@@ -1,12 +1,64 @@
-# React + Vite
+# 🍽️ Tasty Kitchen
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive food ordering web application built with React, Redux, and Tailwind CSS.  
+Users can browse restaurants, view food items, manage their cart, and place orders.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+### ✅ Authentication
+- Login using username and password
+- Secure JWT token-based session handling
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🏠 Home Route
+- Navbar with logo, Home, Cart, and Logout
+- Responsive carousel with offers
+- Popular Restaurants listing
+- Sort by Rating (Highest ↔ Lowest)
+- Pagination support for restaurant list
+- Responsive across desktop, tablet, and mobile
+- Highlighted current route in navbar
+
+### 🍴 Restaurant Details
+- On clicking a restaurant, view its full menu
+- Individual food items with quantity controls
+- Seamless loading indicators while fetching data
+
+### 🛒 Cart
+- View selected food items with quantity & price
+- Update item quantities dynamically
+- Auto-calculation of total order cost
+- Persistent cart using `localStorage` even after refresh
+- Responsive design for all screen sizes
+
+### 🔐 Logout
+- Secure logout functionality with session removal
+- Redirects to login page on logout
+
+### 🚫 Page Not Found
+- User-friendly 404 route for invalid URLs
+
+---
+
+## 🧪 Tech Stack
+
+- **Frontend:** React.js, Redux Toolkit
+- **Styling:** Tailwind CSS
+- **Routing:** React Router DOM
+- **State Persistence:** localStorage
+- **Authentication:** JWT Token (stored via `js-cookie`)
+
+---
+
+## 📦 Installation
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/Kusalkumar06/tasty-kitchen.git
+   cd tasty-kitchen
+
+
+
+
+
