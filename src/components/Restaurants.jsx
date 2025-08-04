@@ -2,16 +2,34 @@ import React from 'react'
 import RestaurantItems from './RestaurantItems';
 import slice from '../redux/slices';
 import { useSelector,useDispatch } from 'react-redux';
+import Loader from './Loader';
+import { BsFilterLeft } from "react-icons/bs";
 
 const actions = slice.actions
+const sortbyOptions = [
+  {
+    optionId: "Lowest",
+    displayText: "Lowest",
+  },
+  {
+    optionId: "Highest",
+    displayText: "Highest",
+  },
+];
+
 
 function Restaurants(props) {
   const {restaurantList} = props;
 
   const dispatch = useDispatch()
-  const {pageNum} = useSelector((store) => {
+  const {pageNum,activeOptionId} = useSelector((store) => {
     return store.sliceState
   })
+
+  const updateOptionId = (event) => {
+    dispatch(actions.setActiveOptionId(event.target.value))
+  }
+
   return (
     <div>
       <div className="Heading Container  mb-[25px]">
@@ -23,17 +41,29 @@ function Restaurants(props) {
             Select Your favourite restaurant special dish and make your day
             happy...
           </p>
-          <div className="">sorting...</div>
+          <div className="flex items-center w-[47%] md:w-[170px] justify-between border-1 p-1 rounded-lg">
+            <BsFilterLeft size={20} className='mt-[2px]'/>
+            <p>Sort by</p>
+            <select className='focus:outline-none focus:ring-0 mb-[1px] rounded' value={activeOptionId} onChange={updateOptionId}>
+              {sortbyOptions.map((each) => (
+                <option className='' value={each.optionId} key={each.optionId}>{each.displayText}</option>
+              ))}
+            </select>
+          </div>
         </div>
       </div>
 
       <hr className="mb-[40px]" />
 
-      <div className="flex flex-wrap justify-between mb-[25px] md:mb-[40px]">
-        {restaurantList.map((each) => (
-          <RestaurantItems details={each} key={each.id} />
-        ))}
-      </div>
+      {restaurantList.length > 0 ? (
+        <div className="flex flex-wrap justify-between mb-[25px] md:mb-[40px]">
+          {restaurantList.map((each) => (
+            <RestaurantItems details={each} key={each.id} />
+          ))}
+        </div>
+      ) : (
+        <Loader />
+      )}
 
       <div className="flex justify-center items-center mb-[30px] md:mb-[50px]">
         {pageNum > 1 && (
@@ -52,7 +82,7 @@ function Restaurants(props) {
           </svg>
         )}
         <p className="mx-5">{pageNum}</p>
-        { pageNum < 4 &&(
+        {pageNum < 4 && (
           <svg
             onClick={() => dispatch(actions.setPageNum(pageNum + 1))}
             xmlns="http://www.w3.org/2000/svg"

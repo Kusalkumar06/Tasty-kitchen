@@ -2,6 +2,7 @@ import React from 'react'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Loader from './Loader';
 
 
 
@@ -27,7 +28,7 @@ function Carousel(props) {
   };
   const {carouselList} = props
   return (
-    <Slider {...settings}>
+    carouselList.length > 0 ?  <Slider {...settings}>
       {carouselList.map((img) => {
         return (
           <div key={img.id}>
@@ -35,8 +36,8 @@ function Carousel(props) {
           </div>
         );
       })}
-    </Slider>
-  );
+    </Slider> :   <Loader/>
+  )
 }
 
 export default Carousel

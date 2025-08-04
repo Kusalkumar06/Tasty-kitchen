@@ -8,12 +8,14 @@ function FoodItem(props) {
     const dispatch = useDispatch()
     const {food} = props;
     const {name,cost,rating,image_url,id} =food
-    const {addToCart} = useSelector((store) => {
+    const {items} = useSelector((store) => {
         return store.sliceState;
     })
-    const count = addToCart[id] || 0
+    const foodItem = items.find((each) => each.id === id)
+    const count = foodItem ? foodItem.quantity : 0
+
   return (
-    <div className="w-[100%] md:w-[30%] my-[20px] flex justify-between p-[10px] md:p-3 shadow-lg rounded-lg md:mx-[15px]">
+    <div className="w-[100%] md:w-[45%] lg:w-[30%] my-[20px] flex justify-between p-[10px] md:p-3 shadow-lg rounded-lg md:mx-[15px]">
       <div>
         <img
           className="w-[160px] h-[110px] md:w-[245px] md:h-[140px] rounded-lg"

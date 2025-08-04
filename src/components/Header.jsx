@@ -71,7 +71,7 @@ function Header() {
         </div>
       </div>
       {isMenuOpen && (
-        <div className="w-[100%] p-[10px] flex items-center justify-between">
+        <div className="w-[100%] block md:hidden p-[10px] flex items-center justify-between">
           <div className="w-[75%] flex items-center justify-evenly">
             <Link onClick={closeMenu} to="/">
               Home

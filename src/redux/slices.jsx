@@ -24,6 +24,8 @@ const slice = createSlice({
     addToCart: {},
     // Cart Items
     items: [],
+    // Sorting
+    activeOptionId : "Lowest",
   },
   reducers: {
     // Login Page
@@ -92,6 +94,11 @@ const slice = createSlice({
     clearCart: (state) => {
       state.items = [];
     },
+
+    //For Sorting
+    setActiveOptionId : (state,data) => {
+      state.activeOptionId = data.payload
+    }
   },
 });
 
