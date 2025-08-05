@@ -58,7 +58,11 @@ Users can browse restaurants, view food items, manage their cart, and place orde
    git clone https://github.com/Kusalkumar06/tasty-kitchen.git
    cd tasty-kitchen
 
-🔐 Login Credentials Note: Make sure the backend server is running.
+---
+
+## 🔐 Login Credentials 
+
+Note: Make sure the backend server is running.
 
 For testing, you can use:
 
