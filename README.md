@@ -58,7 +58,18 @@ Users can browse restaurants, view food items, manage their cart, and place orde
    git clone https://github.com/Kusalkumar06/tasty-kitchen.git
    cd tasty-kitchen
 
+🔐 Login Credentials
+Note: Make sure the backend API supports login validation.
 
+For testing, you can use:
 
+username: rahul
+password: rahul@2021
+
+username: advaika
+password: world@5
+
+username: deepak
+password: lightstar@1
 
 
