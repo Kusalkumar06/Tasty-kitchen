@@ -32,7 +32,6 @@ function FoodItem(props) {
           {count === 0 ? (
             <button
               onClick={() => {
-                  dispatch(actions.setQuantity({ count: count + 1, food_id: id }));
                   dispatch(actions.addToCart({id,name,image_url,cost}))
                 }
               }
@@ -45,7 +44,7 @@ function FoodItem(props) {
               <div className="flex items-center justify-around">
                 <button
                   onClick={() => {
-                        dispatch(actions.setQuantity({ count: count - 1, food_id: id }))
+                        // dispatch(actions.setQuantity({ count: count - 1, food_id: id }))
                         dispatch(actions.removeFromCart(id))
                     } 
                   }
@@ -56,8 +55,10 @@ function FoodItem(props) {
                 <p className="mx-3">{count}</p>
                 <button
                   onClick={() =>{
-                        dispatch(actions.setCount({ count: count + 1, food_id: id }));
-                        dispatch(actions.addToCart(id))
+                        // dispatch(actions.setCount({ count: count + 1, food_id: id }));
+                        dispatch(
+                          actions.addToCart({ id, name, image_url, cost })
+                        );
                     }
                   }
                   className="border-1 rounded-sm px-2"

@@ -23,9 +23,6 @@ function CartItem(props) {
           <div className="flex items-center justify-around">
             <button
               onClick={() => {
-                dispatch(
-                  actions.setQuantity({ count: count - 1, food_id: id })
-                );
                 dispatch(actions.removeFromCart(id));
               }}
               className="border-1 rounded-sm px-2"
@@ -35,9 +32,6 @@ function CartItem(props) {
             <p className="mx-3">{count}</p>
             <button
               onClick={() => {
-                dispatch(
-                  actions.setQuantity({ count: count + 1, food_id: id })
-                );
                 dispatch(actions.addToCart({ name, id, image_url, cost }));
               }}
               className="border-1 rounded-sm px-2"
@@ -80,9 +74,6 @@ function CartItem(props) {
             <div className="flex items-center justify-around">
               <button
                 onClick={() => {
-                  dispatch(
-                    actions.setQuantity({ count: count - 1, food_id: id })
-                  );
                   dispatch(actions.removeFromCart(id));
                 }}
                 className="border-1 rounded-sm px-2"
@@ -92,9 +83,6 @@ function CartItem(props) {
               <p className="mx-3">{count}</p>
               <button
                 onClick={() => {
-                  dispatch(
-                    actions.setQuantity({ count: count + 1, food_id: id })
-                  );
                   dispatch(actions.addToCart({ name, id, image_url, cost }));
                 }}
                 className="border-1 rounded-sm px-2"

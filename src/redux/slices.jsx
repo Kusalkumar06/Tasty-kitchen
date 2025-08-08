@@ -20,8 +20,6 @@ const slice = createSlice({
     restaurantDetails: [],
     // FoodList
     foodList: [],
-    // For quantity
-    addToCart: {},
     // Cart Items
     items: [],
     // Sorting
@@ -63,11 +61,7 @@ const slice = createSlice({
     setFoodList: (state, data) => {
       state.foodList = data.payload;
     },
-    // for quantity
-    setQuantity: (state, data) => {
-      const { food_id, count } = data.payload;
-      state.addToCart[food_id] = count;
-    },
+
     // Cart Items
     setCart: (state, data) => {
       state.items = data.payload;
