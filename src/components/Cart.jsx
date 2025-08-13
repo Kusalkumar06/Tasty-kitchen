@@ -3,10 +3,19 @@ import Header from './Header';
 import Footer from './Footer';
 import CartItem from './CartItem';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import EmptyCart from './EmptyCart';
+import slice from "../redux/slices";
+
+const actions = slice.actions;
 
 function Cart() {
+
+  const dispatch = useDispatch();
+  const clearCart = () => {
+    dispatch(actions.clearCart());
+  };
+
 
   const {items} = useSelector((store) => {
     return store.sliceState
@@ -50,7 +59,7 @@ function Cart() {
             </div>
             <div className="flex px-[10px] md:px-[130px] justify-end my-[15px]">
               <Link to="/payment">
-                <button className="p-[5px] bg-[#F7931E] rounded-lg px-[20px] text-white cursor-pointer">
+                <button  onClick={clearCart} className="p-[5px] bg-[#F7931E] rounded-lg px-[20px] text-white cursor-pointer">
                   Place Order
                 </button>
               </Link>

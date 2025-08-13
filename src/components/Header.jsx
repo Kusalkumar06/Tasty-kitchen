@@ -32,7 +32,7 @@ function Header() {
   return (
     <header>
       <div className="Nav-bar-containier h-[15%] bg-[#F8FAFC] p-[15px] px-[25px] md:px-[50px] flex flex-row items-center justify-between">
-        <div className="Logo-Container  w-[150px] md:w-[215px] flex justify-between items-center">
+        <div onClick={() => {navigate('/')}} className="Logo-Container  w-[150px] md:w-[215px] flex justify-between items-center cursor-pointer">
           <div>
             <img
               className="w-[39px] h-[32px] md:w-[53px] md:h-[43px]"

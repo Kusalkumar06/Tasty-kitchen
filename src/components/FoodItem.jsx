@@ -22,9 +22,13 @@ function FoodItem(props) {
           src={image_url}
         />
       </div>
-      <div className='w-[45%] ml-3 flex flex-col justify-between md:justify-around'>
-        <h1 className="text-[16px] md:text-[] text-[#334155] font-[600]">{name}</h1>
-        <p className="text-[14px] md:text-[] text-[#334155] font-[]">₹ {cost}.00</p>
+      <div className="w-[45%] ml-3 flex flex-col justify-between md:justify-around">
+        <h1 className="text-[16px] md:text-[] text-[#334155] font-[600]">
+          {name}
+        </h1>
+        <p className="text-[14px] md:text-[] text-[#334155] font-[]">
+          ₹ {cost}.00
+        </p>
         <p className="text-[14px] md:text-[] text-[#1E293B] font-[]">
           <span className="text-[]">⭐</span> {rating}
         </p>
@@ -32,10 +36,9 @@ function FoodItem(props) {
           {count === 0 ? (
             <button
               onClick={() => {
-                  dispatch(actions.addToCart({id,name,image_url,cost}))
-                }
-              }
-              className="border-1 bg-[none] border-[#FFA412] px-[10px]  rounded-lg"
+                dispatch(actions.addToCart({ id, name, image_url, cost }));
+              }}
+              className="border-1 bg-[none] border-[#FFA412] px-[10px] cursor-pointer rounded-lg"
             >
               Add
             </button>
@@ -44,24 +47,20 @@ function FoodItem(props) {
               <div className="flex items-center justify-around">
                 <button
                   onClick={() => {
-                        // dispatch(actions.setQuantity({ count: count - 1, food_id: id }))
-                        dispatch(actions.removeFromCart(id))
-                    } 
-                  }
-                  className="border-1 rounded-sm px-2"
+                    // dispatch(actions.setQuantity({ count: count - 1, food_id: id }))
+                    dispatch(actions.removeFromCart(id));
+                  }}
+                  className="border-1 rounded-sm px-2 cursor-pointer"
                 >
                   -
                 </button>
                 <p className="mx-3">{count}</p>
                 <button
-                  onClick={() =>{
-                        // dispatch(actions.setCount({ count: count + 1, food_id: id }));
-                        dispatch(
-                          actions.addToCart({ id, name, image_url, cost })
-                        );
-                    }
-                  }
-                  className="border-1 rounded-sm px-2"
+                  onClick={() => {
+                    // dispatch(actions.setCount({ count: count + 1, food_id: id }));
+                    dispatch(actions.addToCart({ id, name, image_url, cost }));
+                  }}
+                  className="border-1 rounded-sm px-2 cursor-pointer"
                 >
                   +
                 </button>

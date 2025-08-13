@@ -76,7 +76,7 @@ function CartItem(props) {
                 onClick={() => {
                   dispatch(actions.removeFromCart(id));
                 }}
-                className="border-1 rounded-sm px-2"
+                className="border-1 rounded-sm px-2 cursor-pointer"
               >
                 -
               </button>
@@ -85,7 +85,7 @@ function CartItem(props) {
                 onClick={() => {
                   dispatch(actions.addToCart({ name, id, image_url, cost }));
                 }}
-                className="border-1 rounded-sm px-2"
+                className="border-1 rounded-sm px-2 cursor-pointer"
               >
                 +
               </button>
