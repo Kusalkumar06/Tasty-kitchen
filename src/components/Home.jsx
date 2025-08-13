@@ -23,6 +23,10 @@ function Home() {
     dispatch(actions.setCarouselList(data));
   } 
 
+  const setTotalPages = (data) => {
+    dispatch(actions.setTotalPage(parseInt(data/9)+1))
+  }
+
   const setRestaurantList = (data) => {
     dispatch(actions.setRestaurantList(data));
   };
@@ -56,8 +60,9 @@ function Home() {
         },
       };
       const response = await fetch(url, options);
-      const restaurants = await response.json();
-      setRestaurantList(restaurants.restaurants);
+      const responseList = await response.json();
+      setRestaurantList(responseList.restaurants);
+      setTotalPages(responseList.total)
     };
     fn();
   };

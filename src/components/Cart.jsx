@@ -50,12 +50,8 @@ function Cart() {
             </div>
             <hr className="m-[15px] text-[#CBD2D9]" />
             <div className="flex justify-between px-[10px] md:px-[160px] my-[15px]">
-              <p className="text-[16px] md:text-[24px] text-[#3E4C59]">
-                Order Total:
-              </p>
-              <p className="text-[16px] md:text-[24px] text-[#3E4C59]">
-                ₹{total}.00
-              </p>
+              <p className="text-[16px] md:text-[24px] text-[#3E4C59]">Order Total:</p>
+              <p className="text-[16px] md:text-[24px] text-[#3E4C59]">₹{total}.00</p>
             </div>
             <div className="flex px-[10px] md:px-[130px] justify-end my-[15px]">
               <Link to="/payment">

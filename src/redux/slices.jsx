@@ -14,8 +14,9 @@ const slice = createSlice({
     carouselList: [],
     //Restaurants:
     restaurantList: [],
-    //PageNUm:
+    //PageNUm, totalPages
     pageNum: 1,
+    totalPage:0,
     // EachRestaurantDetails
     restaurantDetails: [],
     // FoodList
@@ -49,9 +50,12 @@ const slice = createSlice({
     setRestaurantList: (state, data) => {
       state.restaurantList = data.payload;
     },
-    //PageNum:
+    //PageNum,totalPages
     setPageNum: (state, data) => {
       state.pageNum = data.payload;
+    },
+    setTotalPage :(state,data) => {
+      state.totalPage = data.payload;
     },
     //RestaurantDetsils
     setRestaurantDetails: (state, data) => {

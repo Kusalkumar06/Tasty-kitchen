@@ -14,15 +14,11 @@ function PaymentSuccuess() {
           <p className="text-[24px] text-[#1E293B] ">Payment Successful</p>
           <div>
             <p className="text-[16px] text-[#64748B]">Thank you for ordering</p>
-            <p className="text-[16px] text-[#64748B]">
-              Your payment is successfully completed.
-            </p>
+            <p className="text-[16px] text-[#64748B]">Your payment is successfully completed.</p>
           </div>
           <div>
             <Link to="/">
-              <button className="p-[5px] bg-[#F7931E] rounded-lg px-[20px] text-white cursor-pointer">
-                Go to Home Page
-              </button>
+              <button className="p-[5px] bg-[#F7931E] rounded-lg px-[20px] text-white cursor-pointer">Go to Home Page</button>
             </Link>
           </div>
         </div>

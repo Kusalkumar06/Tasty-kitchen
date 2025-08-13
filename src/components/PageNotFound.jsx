@@ -11,16 +11,11 @@ function PageNotFound() {
           </div>
           <p className="text-[24px] text-[#1E293B] ">Page Not Found</p>
           <div>
-            <p className="text-[16px] text-[#64748B]">
-              We are sorry, the page you requested could not be found. Please go
-              back to the homepage
-            </p>
+            <p className="text-[16px] text-[#64748B]">We are sorry, the page you requested could not be found. Please go back to the homepage</p>
           </div>
           <div>
             <Link to="/">
-              <button className="p-[5px] bg-[#F7931E] rounded-lg px-[20px] text-white cursor-pointer">
-                Home Page
-              </button>
+              <button className="p-[5px] bg-[#F7931E] rounded-lg px-[20px] text-white cursor-pointer">Home Page</button>
             </Link>
           </div>
         </div>

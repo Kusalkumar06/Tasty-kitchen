@@ -47,78 +47,48 @@ function EachRestaurantItem() {
       <Header />
       <div className="my-3 md:my-[30px] h-[188px] md:h-[387px] mb-[20px] md:py-[50px] md:px-[150px] flex items-center bg-[url('https://res.cloudinary.com/dtrouncfb/image/upload/v1754163443/Rectangle_1399_sqomw9.png')]">
         <div className="for-desktop-container  hidden md:flex items-center">
-          <div>
-            <img
-              className="for-desktop-view hidden md:block w-[405px] h-[240px] rounded-lg"
-              src={restaurantDetails.image_url}
-            />
+          <div className='Image-container'>
+            <img className="hidden md:block w-[405px] h-[240px] rounded-lg" src={restaurantDetails.image_url} />
           </div>
           <div className="Details-container h-[240px] px-[25px] py-[10px] flex flex-col justify-between">
-            <h1 className="text-[36px] text-[#FFFFFF] font-[500]">
-              {restaurantDetails.name}
-            </h1>
-            <p className="text-[16px] text-[#FFFFFF] font-[400]">
-              {restaurantDetails.cuisine}
-            </p>
-            <p className="text-[16px] text-[#FFFFFF] font-[400]">
-              {restaurantDetails.location}
-            </p>
+            <h1 className="text-[36px] text-[#FFFFFF] font-[500]"> {restaurantDetails.name} </h1>
+            <p className="text-[16px] text-[#FFFFFF] font-[400]"> {restaurantDetails.cuisine} </p>
+            <p className="text-[16px] text-[#FFFFFF] font-[400]"> {restaurantDetails.location} </p>
             <div className="flex items-center h-[60px]">
               <div className="flex flex-col justify-around">
-                <p className="text-[14px]">
-                  ⭐{" "}
-                  <span className="text-[14px] font-[600] text-[#FFFFFF]">
-                    {restaurantDetails.rating}
-                  </span>
-                </p>
-                <p className="text-[12px] text-white">
-                  {restaurantDetails.reviews_count}+ Ratings
-                </p>
+                <p className="text-[14px]">⭐{" "}<span className="text-[14px] font-[600] text-[#FFFFFF]">{restaurantDetails.rating}</span></p>
+                <p className="text-[12px] text-white">{restaurantDetails.reviews_count}+ Ratings</p>
               </div>
+
               <div className="w-px h-10 bg-white mx-4"></div>
+
               <div className="flex flex-col justify-around">
-                <p className="text-[14px] font-[600] text-[#FFFFFF]">
-                  ₹ {restaurantDetails.cost_for_two}
-                </p>
+                <p className="text-[14px] font-[600] text-[#FFFFFF]">₹ {restaurantDetails.cost_for_two}</p>
                 <p className="text-[12px] text-white">Cost for two</p>
               </div>
             </div>
           </div>
         </div>
+
+
         <div className="for-mobile-view block md:hidden flex items-center justify-center">
-          <div className="image-contaiiner p-2">
-            <img
-              className="w-[150px] h-[150px] rounded-full"
-              src={restaurantDetails.image_url}
-            />
+          <div className="image-container p-2">
+            <img className="w-[150px] h-[150px] rounded-full" src={restaurantDetails.image_url} />
           </div>
           <div className="Details-container w-[57%] flex flex-col justify-evenly">
-            <h1 className="text-[16px] text-[#FFFFFF] font-[500]">
-              {restaurantDetails.name}
-            </h1>
-            <p className="text-[12px] text-[#FFFFFF] font-[400]">
-              {restaurantDetails.cuisine}
-            </p>
-            <p className="text-[12px] text-[#FFFFFF] font-[400]">
-              {restaurantDetails.location}
-            </p>
+            <h1 className="text-[16px] text-[#FFFFFF] font-[500]">{restaurantDetails.name}</h1>
+            <p className="text-[12px] text-[#FFFFFF] font-[400]">{restaurantDetails.cuisine}</p>
+            <p className="text-[12px] text-[#FFFFFF] font-[400]">{restaurantDetails.location}</p>
             <div className="flex items-center h-[60px]">
               <div className="flex flex-col justify-around">
-                <p className="text-[12px]">
-                  ⭐{" "}
-                  <span className="text-[12px] font-[600] text-[#FFFFFF]">
-                    {restaurantDetails.rating}
-                  </span>
-                </p>
-                <p className="text-[12px] text-white">
-                  {restaurantDetails.reviews_count}+ Ratings
-                </p>
+                <p className="text-[12px]">⭐{" "}<span className="text-[12px] font-[600] text-[#FFFFFF]">{restaurantDetails.rating}</span></p>
+                <p className="text-[12px] text-white">{restaurantDetails.reviews_count}+ Ratings</p>
               </div>
+
               <div className="w-px h-10 bg-white mx-4"></div>
+
               <div className="flex flex-col justify-around">
-                <p className="text-[12px] font-[600] text-[#FFFFFF]">
-                  ₹ {restaurantDetails.cost_for_two}
-                </p>
+                <p className="text-[12px] font-[600] text-[#FFFFFF]">₹ {restaurantDetails.cost_for_two}</p>
                 <p className="text-[12px] text-white">Cost for two</p>
               </div>
             </div>

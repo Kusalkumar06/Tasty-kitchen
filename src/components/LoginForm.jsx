@@ -103,22 +103,14 @@ function LoginForm() {
   return (
     <div className="login-page flex flex-col md:flex-row h-screen pl-[20px] md:pl-[0px]">
       <div className="Image for Smaller Devices: flex relative h-[50%] overflow-hidden mb-[50px] block md:hidden">
-        <img
-          className=" absolute rounded-[50%] w-[387px] h-[387px] top-[-70px] left-[90px]"
-          src="https://res.cloudinary.com/dtrouncfb/image/upload/v1753885461/Rectangle_1456_yizpip.png"
-        />
+        <img className=" absolute rounded-[50%] w-[387px] h-[387px] top-[-70px] left-[90px]" src="https://res.cloudinary.com/dtrouncfb/image/upload/v1753885461/Rectangle_1456_yizpip.png"/>
         <p className="self-end w-[50%] text-start text-[24px]">Login</p>
       </div>
       <div className="login-container w-[100%] md:w-[60%] md:flex flex-col justify-center items-center">
         <div className="w-100% md:w-[45%] md:shadow-xl md:px-[50px]">
           <div className="Logo-container hidden md:block md:flex flex-col justify-center items-center">
-            <img
-              className="mb-2"
-              src="https://res.cloudinary.com/dtrouncfb/image/upload/v1753885682/Group_7420_q3v36e.png"
-            />
-            <h1 className="font-[DM_Sans] text-[24px] font-[500] text-[#F7931E] mb-5">
-              Tasty Kitchens
-            </h1>
+            <img className="mb-2" src="https://res.cloudinary.com/dtrouncfb/image/upload/v1753885682/Group_7420_q3v36e.png" />
+            <h1 className="font-[DM_Sans] text-[24px] font-[500] text-[#F7931E] mb-5">Tasty Kitchens</h1>
             <h1 className="text-[32px] mb-[50px]">Login</h1>
           </div>
           <form onSubmit={onClickSubmit} className="Form-container pr-[20px] md:pr-[0px]">
@@ -136,10 +128,7 @@ function LoginForm() {
         </div>
       </div>
       <div className="w-[40%] hidden md:block">
-        <img
-          className="h-full w-[100%]"
-          src="https://res.cloudinary.com/dtrouncfb/image/upload/v1753885461/Rectangle_1456_yizpip.png"
-        />
+        <img className="h-full w-[100%]" src="https://res.cloudinary.com/dtrouncfb/image/upload/v1753885461/Rectangle_1456_yizpip.png"/>
       </div>
     </div>
   );
