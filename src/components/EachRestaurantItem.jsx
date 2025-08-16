@@ -44,8 +44,10 @@ function EachRestaurantItem() {
 
   return (
     <div>
-      <Header />
-      <div className="my-3 md:my-[30px] h-[188px] md:h-[387px] mb-[20px] md:py-[50px] md:px-[150px] flex items-center bg-[url('https://res.cloudinary.com/dtrouncfb/image/upload/v1754163443/Rectangle_1399_sqomw9.png')]">
+      <div className='mb-[65px] md:mb-[75px]'>
+        <Header />
+      </div>
+      <div className="mt-[30px] my-3 md:my-[30px] h-[188px] md:h-[387px] mb-[20px] md:py-[50px] md:px-[150px] flex items-center bg-[url('https://res.cloudinary.com/dtrouncfb/image/upload/v1754163443/Rectangle_1399_sqomw9.png')]">
         <div className="for-desktop-container  hidden md:flex items-center">
           <div className='Image-container'>
             <img className="hidden md:block w-[405px] h-[240px] rounded-lg" src={restaurantDetails.image_url} />

@@ -5,8 +5,8 @@ function EmptyCart() {
   return (
     <div>
       <Header />
-      <div className=" h-[89vh] flex items-center justify-center">
-        <div className="text-center w-[25%] h-[60%] flex flex-col justify-between">
+      <div className="h-[89vh] flex items-center justify-center">
+        <div className="text-center w-[80%] md:w-[25%] h-[60%] flex flex-col justify-between">
           <div className="flex justify-center">
             <img src="https://res.cloudinary.com/dtrouncfb/image/upload/v1754289316/cooking_1_1_wqjblq.png" />
           </div>

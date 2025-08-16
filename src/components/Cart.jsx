@@ -27,9 +27,11 @@ function Cart() {
   return (
     items.length > 0 ? 
       <div>
-        <Header />
+        <div className='mb-[65px] md:mb-[80px]'>
+          <Header />
+        </div>
         <div className="my-[30px] md:my-[50px] px-[0px] md:px-[100px] p-[10px]">
-          <div className="bg-[white] md:bg-[#0B69FF1A] p-[0] md:p-[20px]">
+          <div className="bg-[white] md:bg-[#0B69FF1A] p-[0] md:p-[20px] rounded-lg">
             <div className="hidden md:flex justify-around">
               <p>Item</p>
               <p>Quantity</p>

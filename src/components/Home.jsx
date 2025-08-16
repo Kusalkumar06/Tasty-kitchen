@@ -78,7 +78,9 @@ function Home() {
 
   return (
     <div>
-      <Header />
+      <div className='mb-[65px] md:mb-[75px]'>
+        <Header />
+      </div>
       <div className="p-2 md:px-[50px] mt-0 md:mt-[30px]">
         <div className="mb-[40px] md:mb-[70px]">
           <Carousel carouselList={carouselList} />

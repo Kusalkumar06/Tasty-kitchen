@@ -38,6 +38,7 @@ function LoginForm() {
           className="self-start p-[6px] outline-none bg-[#E2E8F0] rounded-[5px] w-[100%]"
           id="username"
           value={username}
+          // name='name'
           placeholder="Enter Username"
           onChange={handleUserName}
         />
