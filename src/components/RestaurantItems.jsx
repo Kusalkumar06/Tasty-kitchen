@@ -7,7 +7,7 @@ function RestaurantItems(props) {
   const {rating,total_reviews} = user_rating;
 
   return (
-    <div className="w-full md:w-[30%] mb-[35px] shadow-lg p-[10px] rounded-lg cursor-pointer">
+    <div className="w-full md:w-[30%] mb-[35px] shadow-lg p-[10px] rounded-lg cursor-pointer transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
       <Link to={`/restaurants/${id}`}>
         <div className=" flex">
           <div className="Image-container">

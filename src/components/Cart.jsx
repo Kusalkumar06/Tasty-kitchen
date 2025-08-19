@@ -27,7 +27,7 @@ function Cart() {
   return (
     items.length > 0 ? 
       <div>
-        <div className='mb-[65px] md:mb-[80px]'>
+        <div className='mb-[65px] md:mb-[100px]'>
           <Header />
         </div>
         <div className="my-[30px] md:my-[50px] px-[0px] md:px-[100px] p-[10px]">
@@ -56,6 +56,9 @@ function Cart() {
               <p className="text-[16px] md:text-[24px] text-[#3E4C59]">₹{total}.00</p>
             </div>
             <div className="flex px-[10px] md:px-[130px] justify-end my-[15px]">
+              <button  onClick={clearCart} className="p-[5px] mr-[10px] bg-[#F7931E] rounded-lg px-[20px] text-white cursor-pointer">
+                  Clear Cart
+              </button>
               <Link to="/payment">
                 <button  onClick={clearCart} className="p-[5px] bg-[#F7931E] rounded-lg px-[20px] text-white cursor-pointer">
                   Place Order

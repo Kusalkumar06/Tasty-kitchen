@@ -15,8 +15,8 @@ function CartItem(props) {
   return (
     <div>
       <div className="For-Desktop-view p-3 hidden md:flex items-center justify-between">
-        <div className="flex items-center w-[30%] justify-between">
-          <img className="w-[136px] h-[100px] rounded-lg" src={image_url} />
+        <div className="flex items-center w-[30%]">
+          <img className="w-[136px] md:mr-[20px] h-[100px] rounded-lg" src={image_url} />
           <p className="text-[20px] text-[#183B56] font-[Roboto]">{name}</p>
         </div>
         <div className="flex w-[30%] justify-center">
