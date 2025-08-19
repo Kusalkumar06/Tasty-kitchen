@@ -14,7 +14,6 @@ const actions = slice.actions
 function Home() {
    const dispatch = useDispatch()
 
-
   const { carouselList, restaurantList, pageNum,activeOptionId } = useSelector((store) => {
     return store.sliceState;
   });

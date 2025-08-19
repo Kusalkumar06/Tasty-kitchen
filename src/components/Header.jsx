@@ -41,7 +41,7 @@ function Header() {
           <p className="text-[16px] font-[500] md:text-[24px] text-[#F7931E] ">Tasty Kitchens</p>
         </div>
 
-        <div className="hidden w-[30%] md:flex items-center justify-around ">
+        <div className="hidden w-[20%] md:flex items-center justify-around ">
           <Link to="/">Home</Link>
           <Link to="/cart">Cart</Link>
           <button onClick={onLogout} className="p-[5px] bg-[#F7931E] rounded-lg px-[20px] text-white cursor-pointer" >Logout</button>

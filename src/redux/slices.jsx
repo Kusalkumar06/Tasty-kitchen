@@ -89,6 +89,10 @@ const slice = createSlice({
           state.items.splice(index, 1);
       }
     },
+    removeInCart:(state,data) => {
+      const id = data.payload;
+      state.items = state.items.filter((eachItem) => eachItem.id != id);
+    },
     clearCart: (state) => {
       state.items = [];
     },
