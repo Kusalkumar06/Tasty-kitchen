@@ -37,12 +37,12 @@ function Restaurants(props) {
         <h1 className="text-[24px] md:text-[32px] mb-3 text-[#183B56] font-[600]">Popular Restaurants</h1>
         <div className="md:flex justify-between items-center">
           <p className="text-[12px] md:text-[16px] text-[#64748B] mb-3">Select Your favourite restaurant special dish and make your day happy...</p>
-          <div className="flex items-center w-[47%] md:w-[170px] justify-between border-1 p-1 rounded-lg">
+          <div className="flex items-center w-[170px] justify-between p-1 rounded-lg">
             <BsFilterLeft size={20} className='mt-[2px]'/>
             <p>Sort by</p>
             <select className='focus:outline-none focus:ring-0 mb-[1px] rounded' value={activeOptionId} onChange={updateOptionId}>
               {sortbyOptions.map((each) => (
-                <option className='' value={each.optionId} key={each.optionId}>{each.displayText}</option>
+                <option className='b-none' value={each.optionId} key={each.optionId}>{each.displayText}</option>
               ))}
             </select>
           </div>
