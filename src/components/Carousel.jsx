@@ -32,7 +32,7 @@ function Carousel(props) {
       {carouselList.map((img) => {
         return (
           <div key={img.id}>
-            <img className='w-full h-[188px] md:h-[387px]' src={img.image_url} />
+            <img className='w-full h-[150px] md:h-[387px]' src={img.image_url} />
           </div>
         );
       })}
