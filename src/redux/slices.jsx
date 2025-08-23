@@ -71,12 +71,12 @@ const slice = createSlice({
       state.items = data.payload;
     },
     addToCart: (state, data) => {
-      const {id,name,image_url,cost} = data.payload 
+      const {id,name,image_url,cost,restaurant_name} = data.payload 
       const findExist = state.items.find(each => each.id === id)
       if (findExist) {
         findExist.quantity += 1;
       } else {
-        state.items.push({id,quantity : 1,name,image_url,cost})
+        state.items.push({id,quantity : 1,name,image_url,cost,restaurant_name})
       }
     },
     removeFromCart: (state, data) => {

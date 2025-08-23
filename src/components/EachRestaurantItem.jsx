@@ -100,7 +100,7 @@ function EachRestaurantItem() {
       {foodList.length > 0 ? (
         <div className="md:px-[100px] lg:px-[120px] flex flex-wrap md:justify-around justify-center mb-3">
           {foodList.map((food) => (
-            <FoodItem food={food} key={food.id} />
+            <FoodItem food={food} key={food.id} restaurant_name ={restaurantDetails.name}/>
           ))}
         </div>
       ) : (
